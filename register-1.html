@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | KBX Esports</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   KBX ESPORTS - PROFESSIONAL STYLESHEET
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;600;700&display=swap');
+
+:root {
+  --neon: #00f5ff;
+  --neon2: #ff006e;
+  --gold: #ffd700;
+  --dark: #060810;
+  --dark2: #0a0d1a;
+  --card: #0d1020;
+  --card2: #111525;
+  --border: #1a2040;
+  --border2: #00f5ff22;
+  --text: #e8eaff;
+  --muted: #6b7299;
+  --green: #00ff88;
+  --orange: #ff6b00;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark2); }
+::-webkit-scrollbar-thumb { background: var(--neon); border-radius: 3px; }
+
+/* ===== CONTAINER ===== */
+.container { max-width: 1200px; margin: auto; padding: 0 20px; }
+.container-fluid { width: 100%; padding: 0 40px; }
+
+/* ===== BACKGROUND GRID ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(6, 8, 16, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo span { color: var(--neon); }
+.logo .dot { color: var(--neon2); font-size: 28px; line-height: 1; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--neon);
+  background: var(--border2);
+}
+
+.nav-cta {
+  background: var(--neon) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  border-radius: 6px;
+  transition: all 0.3s !important;
+}
+
+.nav-cta:hover {
+  background: #00d4e8 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(0,245,255,0.4) !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--neon);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,245,255,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,0,110,0.05) 0%, transparent 60%),
+    var(--dark);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,245,255,0.08);
+  border: 1px solid rgba(0,245,255,0.3);
+  color: var(--neon);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeInDown 0.6s ease both;
+}
+
+.hero-badge span { 
+  width: 6px; height: 6px; 
+  background: var(--neon); 
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  animation: fadeInUp 0.7s ease 0.1s both;
+}
+
+.hero-title .line1 { color: var(--text); }
+.hero-title .line2 { 
+  color: var(--neon);
+  text-shadow: 0 0 40px rgba(0,245,255,0.5);
+}
+
+.hero-subtitle {
+  font-family: 'Exo 2', sans-serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: var(--muted);
+  margin-bottom: 40px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  animation: fadeInUp 0.7s ease 0.2s both;
+}
+
+.hero-subtitle strong { color: var(--text); font-weight: 600; }
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.7s ease 0.3s both;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.7s ease 0.4s both;
+}
+
+.stat-item { text-align: left; }
+.stat-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--neon);
+  line-height: 1;
+}
+.stat-label { font-size: 12px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--neon);
+  color: #000;
+  box-shadow: 0 0 30px rgba(0,245,255,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(0,245,255,0.5);
+  background: #00e0f0;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--neon);
+  border: 1px solid var(--neon);
+}
+
+.btn-secondary:hover {
+  background: rgba(0,245,255,0.08);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: var(--neon2);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255,0,110,0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(255,0,110,0.5);
+}
+
+.btn-sm { padding: 8px 18px; font-size: 12px; }
+.btn-lg { padding: 16px 36px; font-size: 16px; }
+.btn-full { width: 100%; justify-content: center; }
+
+/* ===== SECTION STYLES ===== */
+section { position: relative; z-index: 1; }
+
+.section-pad { padding: 90px 0; }
+.section-pad-sm { padding: 60px 0; }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--neon);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-title span { color: var(--neon); }
+
+.section-desc {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 560px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  border-color: rgba(0,245,255,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(0,245,255,0.05);
+}
+
+.card-body { padding: 24px; }
+.card-header-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #0d1a2e, #1a0d2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 40px;
+  color: var(--neon);
+  font-weight: 900;
+}
+
+/* ===== TOURNAMENT CARDS ===== */
+.tournaments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.tournament-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.tournament-card:hover {
+  border-color: rgba(0,245,255,0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,245,255,0.07);
+}
+
+.t-banner {
+  height: 160px;
+  background: linear-gradient(135deg, #0d1a2e 0%, #1a0a2e 50%, #0a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.t-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(0,245,255,0.05), rgba(255,0,110,0.05));
+}
+
+.t-banner-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: rgba(0,245,255,0.15);
+  letter-spacing: 4px;
+}
+
+.t-format-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--neon2);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.t-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-open { background: rgba(0,255,136,0.15); color: var(--green); border: 1px solid rgba(0,255,136,0.3); }
+.status-full { background: rgba(255,107,0,0.15); color: var(--orange); border: 1px solid rgba(255,107,0,0.3); }
+.status-upcoming { background: rgba(0,245,255,0.1); color: var(--neon); border: 1px solid rgba(0,245,255,0.2); }
+.status-closed { background: rgba(107,114,153,0.15); color: var(--muted); border: 1px solid rgba(107,114,153,0.3); }
+
+.t-body { padding: 20px; }
+
+.t-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.t-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.t-meta-item { }
+.t-meta-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.t-meta-val { font-size: 16px; font-weight: 700; color: var(--text); }
+.t-meta-val.gold { color: var(--gold); }
+.t-meta-val.neon { color: var(--neon); }
+
+.slot-bar {
+  margin: 12px 0 16px;
+}
+
+.slot-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.slot-bar-label span:first-child { color: var(--muted); }
+.slot-bar-label span:last-child { color: var(--neon); font-weight: 700; }
+
+.slot-bar-track {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.slot-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon), #00a8b5);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.slot-bar-fill.full { background: linear-gradient(90deg, var(--orange), #ff3300); }
+
+/* ===== COUNTDOWN TIMER ===== */
+.countdown {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: center;
+  min-width: 54px;
+}
+
+.countdown-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--neon);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ===== FEATURES GRID ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  border-color: rgba(0,245,255,0.25);
+  transform: translateY(-4px);
+}
+
+.feature-card:hover::before { opacity: 1; }
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(0,245,255,0.08);
+  border: 1px solid rgba(0,245,255,0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.feature-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===== LEADERBOARD ===== */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.leaderboard-table th {
+  background: var(--card2);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.leaderboard-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  color: var(--text);
+}
+
+.leaderboard-table tr:last-child td { border-bottom: none; }
+
+.leaderboard-table tbody tr {
+  background: var(--card);
+  transition: 0.2s;
+}
+
+.leaderboard-table tbody tr:hover { background: var(--card2); }
+
+.leaderboard-table tbody tr:nth-child(1) td:first-child { color: var(--gold); }
+.leaderboard-table tbody tr:nth-child(2) td:first-child { color: #c0c0c0; }
+.leaderboard-table tbody tr:nth-child(3) td:first-child { color: #cd7f32; }
+
+.rank-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.points-val {
+  color: var(--neon);
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+}
+
+/* ===== FORM STYLES ===== */
+.form-group { margin-bottom: 20px; }
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.form-control:focus {
+  border-color: var(--neon);
+  box-shadow: 0 0 0 3px rgba(0,245,255,0.1);
+}
+
+.form-control::placeholder { color: var(--muted); }
+
+select.form-control {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7299' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* File Upload */
+.file-upload {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.file-upload:hover, .file-upload.drag-over {
+  border-color: var(--neon);
+  background: rgba(0,245,255,0.03);
+}
+
+.file-upload input { 
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; 
+}
+
+.file-upload-icon { font-size: 32px; margin-bottom: 8px; }
+.file-upload-text { color: var(--muted); font-size: 14px; }
+.file-upload-text strong { color: var(--neon); }
+
+/* OTP Field */
+.otp-group { display: flex; gap: 10px; align-items: flex-start; }
+.otp-group .form-control { flex: 1; }
+.otp-group .btn { flex-shrink: 0; height: 48px; }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalIn 0.3s ease both;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+  padding: 24px 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.modal-close:hover { color: var(--neon); border-color: var(--neon); }
+
+.modal-body { padding: 24px 28px 28px; }
+
+/* ===== PAYMENT BOX ===== */
+.payment-box {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+}
+
+.qr-placeholder {
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.qr-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+.qr-placeholder .qr-dummy {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.qr-dummy span {
+  background: #000;
+  border-radius: 2px;
+  display: block;
+}
+
+.upi-id-display {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  color: var(--neon);
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upi-id-display:hover { border-color: var(--neon); }
+
+.fee-display {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--gold);
+  margin: 16px 0;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  background: var(--neon);
+  color: #000;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ===== ALERT / TOAST ===== */
+.alert {
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alert-success { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); color: var(--green); }
+.alert-error { background: rgba(255,0,110,0.1); border: 1px solid rgba(255,0,110,0.3); color: var(--neon2); }
+.alert-info { background: rgba(0,245,255,0.1); border: 1px solid rgba(0,245,255,0.2); color: var(--neon); }
+.alert-warning { background: rgba(255,107,0,0.1); border: 1px solid rgba(255,107,0,0.3); color: var(--orange); }
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  min-width: 300px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  animation: toastIn 0.3s ease both;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== NEWS CARD ===== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.news-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.news-card:hover {
+  border-color: rgba(0,245,255,0.25);
+  transform: translateY(-4px);
+}
+
+.news-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--card2), #1a0d2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.news-body { padding: 20px; }
+.news-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 10px;
+}
+
+.news-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.news-meta { font-size: 13px; color: var(--muted); }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #030508;
+  border-top: 1px solid var(--border);
+  padding: 60px 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-brand .logo { font-size: 24px; margin-bottom: 16px; display: block; }
+.footer-brand p { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+
+.social-links { display: flex; gap: 10px; }
+.social-link {
+  width: 38px;
+  height: 38px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.social-link:hover { color: var(--neon); border-color: var(--neon); }
+
+.footer-col h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.footer-col ul a:hover { color: var(--neon); padding-left: 4px; }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-bottom p { color: var(--muted); font-size: 13px; }
+
+/* ===== WHATSAPP BTN ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 54px;
+  height: 54px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  cursor: pointer;
+  z-index: 999;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #fff;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+}
+
+/* ===== MARQUEE ===== */
+.marquee-wrap {
+  background: rgba(0,245,255,0.05);
+  border-top: 1px solid rgba(0,245,255,0.1);
+  border-bottom: 1px solid rgba(0,245,255,0.1);
+  overflow: hidden;
+  padding: 12px 0;
+}
+
+.marquee {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+  gap: 0;
+}
+
+.marquee-item {
+  padding: 0 40px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--neon);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marquee-item span { color: var(--muted); }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== PAGE HERO (inner pages) ===== */
+.page-hero {
+  background: linear-gradient(180deg, rgba(0,245,255,0.05) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 0 50px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.page-hero h1 span { color: var(--neon); }
+.page-hero p { color: var(--muted); font-size: 16px; }
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.breadcrumb a { color: var(--neon); text-decoration: none; }
+.breadcrumb span { color: var(--border); }
+
+/* ===== FILTER BAR ===== */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: rgba(0,245,255,0.08);
+  border-color: var(--neon);
+  color: var(--neon);
+}
+
+/* ===== REGISTRATION STEPS ===== */
+.steps {
+  display: flex;
+  gap: 0;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0 auto 8px;
+  transition: 0.3s;
+}
+
+.step.active .step-num,
+.step.done .step-num {
+  background: var(--neon);
+  border-color: var(--neon);
+  color: #000;
+}
+
+.step-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.step.active .step-label { color: var(--neon); }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0,245,255,0.3); }
+  50% { box-shadow: 0 0 40px rgba(0,245,255,0.6); }
+}
+
+.animate-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== UTILITY ===== */
+.text-neon { color: var(--neon); }
+.text-neon2 { color: var(--neon2); }
+.text-gold { color: var(--gold); }
+.text-green { color: var(--green); }
+.text-muted { color: var(--muted); }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.gap-10 { gap: 10px; }
+.gap-20 { gap: 20px; }
+
+.hidden { display: none !important; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0; right: 0;
+    background: rgba(6,8,16,0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 20px;
+    gap: 4px;
+  }
+  
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { gap: 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .footer-bottom { text-align: center; }
+  .tournaments-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .steps::before { display: none; }
+}
+
+@media (max-width: 480px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { justify-content: center; }
+  .tabs { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">KBX<span>ESPORTS</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Tournaments</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="register.html" class="nav-cta">Register Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Register</div>
+    <h1>Team <span>Registration</span></h1>
+    <p>Verify email → Fill details → Pay → Done!</p>
+  </div>
+</div>
+
+<section class="section-pad">
+  <div class="container" style="max-width:760px">
+
+    <!-- STEPS -->
+    <div class="steps animate-in">
+      <div class="step active" id="step1"><div class="step-num">1</div><div class="step-label">Verify Email</div></div>
+      <div class="step" id="step2"><div class="step-num">2</div><div class="step-label">Team Details</div></div>
+      <div class="step" id="step3"><div class="step-num">3</div><div class="step-label">Pay Fee</div></div>
+      <div class="step" id="step4"><div class="step-num">4</div><div class="step-label">Done!</div></div>
+    </div>
+
+    <!-- STEP 1: SELECT TOURNAMENT + OTP -->
+    <div id="stepOTP" class="animate-in">
+      <div class="card">
+        <div class="card-body">
+          <h2 style="font-family:'Orbitron',sans-serif;font-size:18px;margin-bottom:6px">Step 1: Verify Email</h2>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:22px">Select tournament and verify your email with OTP to get started.</p>
+
+          <div class="form-group">
+            <label class="form-label">Select Tournament *</label>
+            <select class="form-control" id="tournamentSelect">
+              <option value="">— Loading tournaments... —</option>
+            </select>
+            <div id="tourDetails" style="margin-top:10px;display:none">
+              <div style="background:var(--dark2);border:1px solid var(--border);border-radius:8px;padding:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+                <div style="font-size:13px"><span style="color:var(--muted)">Entry Fee: </span><strong style="color:var(--neon)" id="tourFee">—</strong></div>
+                <div style="font-size:13px"><span style="color:var(--muted)">Prize: </span><strong style="color:var(--gold)" id="tourPrize">—</strong></div>
+                <div style="font-size:13px"><span style="color:var(--muted)">Mode: </span><strong id="tourMode">—</strong></div>
+                <div style="font-size:13px"><span style="color:var(--muted)">Slots Left: </span><strong id="tourSlots" style="color:var(--green)">—</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <div class="otp-group">
+              <input type="email" class="form-control" id="otpEmail" placeholder="yourname@gmail.com">
+              <button class="btn btn-primary" id="sendOtpBtn" onclick="sendOTP()" style="height:48px;white-space:nowrap">Send OTP</button>
+            </div>
+            <div style="font-size:12px;color:var(--muted);margin-top:6px">⚠️ One email = one registration per tournament</div>
+          </div>
+
+          <div id="otpSection" class="hidden">
+            <div class="alert alert-info">📧 OTP sent to your email! Check inbox + spam. Valid 5 minutes.</div>
+            <div class="form-group">
+              <label class="form-label">Enter 6-Digit OTP *</label>
+              <div class="otp-group">
+                <input type="text" class="form-control" id="otpInput" placeholder="123456" maxlength="6"
+                  style="letter-spacing:8px;font-family:'Orbitron',sans-serif;font-size:22px;text-align:center">
+                <button class="btn btn-secondary" id="verifyOtpBtn" onclick="verifyOTP()" style="height:48px">Verify</button>
+              </div>
+            </div>
+            <div id="otpError" class="alert alert-error hidden"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: TEAM DETAILS FORM (shown after OTP verified) -->
+    <div id="regForm" class="hidden">
+      <div class="card animate-in" style="margin-top:24px">
+        <div class="card-body">
+          <h2 style="font-family:'Orbitron',sans-serif;font-size:18px;margin-bottom:6px">Step 2: Team Details</h2>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:22px">Fill accurately. This is used for match coordination.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Team Name *</label>
+              <input type="text" class="form-control" id="teamName" placeholder="e.g. DRAGON SQUAD">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Leader Name *</label>
+              <input type="text" class="form-control" id="leaderName" placeholder="Leader full name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">WhatsApp Number *</label>
+            <input type="tel" class="form-control" id="whatsapp" placeholder="10-digit number without +91" maxlength="10">
+          </div>
+
+          <!-- PLAYER SLOTS - dynamic based on mode -->
+          <div id="playerSlots"></div>
+
+          <div id="teamDetailsError" class="alert alert-error hidden"></div>
+
+          <button class="btn btn-primary btn-full btn-lg" onclick="goToPayment()">
+            Next: Pay Entry Fee →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3: PAYMENT (shown after team details filled) -->
+    <div id="paymentSection" class="hidden">
+      <div class="card animate-in" style="margin-top:24px">
+        <div class="card-body">
+          <h2 style="font-family:'Orbitron',sans-serif;font-size:18px;margin-bottom:6px">Step 3: Pay Entry Fee</h2>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:22px">Scan QR or use UPI ID → Pay → Enter UTR → Submit.</p>
+
+          <div class="payment-box">
+            <div style="margin-bottom:16px">
+              <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Scan QR Code</div>
+              <div id="qrDisplay" class="qr-placeholder" style="margin:auto">
+                <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="180" height="180" fill="white"/>
+                  <rect x="10" y="10" width="60" height="60" fill="black" rx="4"/>
+                  <rect x="18" y="18" width="44" height="44" fill="white" rx="2"/>
+                  <rect x="24" y="24" width="32" height="32" fill="black" rx="2"/>
+                  <rect x="110" y="10" width="60" height="60" fill="black" rx="4"/>
+                  <rect x="118" y="18" width="44" height="44" fill="white" rx="2"/>
+                  <rect x="124" y="24" width="32" height="32" fill="black" rx="2"/>
+                  <rect x="10" y="110" width="60" height="60" fill="black" rx="4"/>
+                  <rect x="18" y="118" width="44" height="44" fill="white" rx="2"/>
+                  <rect x="24" y="124" width="32" height="32" fill="black" rx="2"/>
+                  <rect x="80" y="10" width="8" height="8" fill="black"/>
+                  <rect x="92" y="10" width="8" height="8" fill="black"/>
+                  <rect x="80" y="80" width="8" height="8" fill="black"/>
+                  <rect x="92" y="80" width="8" height="8" fill="black"/>
+                  <rect x="104" y="80" width="8" height="8" fill="black"/>
+                  <rect x="80" y="92" width="8" height="8" fill="black"/>
+                  <rect x="80" y="104" width="8" height="8" fill="black"/>
+                  <rect x="80" y="116" width="8" height="8" fill="black"/>
+                  <rect x="80" y="128" width="8" height="8" fill="black"/>
+                  <rect x="80" y="140" width="8" height="8" fill="black"/>
+                  <text x="90" y="60" text-anchor="middle" fill="black" font-size="10" font-weight="bold" font-family="Arial">KBX</text>
+                </svg>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">UPI ID (tap to copy)</div>
+            <div class="upi-id-display" onclick="copyUPI()">
+              <span class="upi-text" id="upiIdText">kbxesports@paytm</span>
+              <span style="font-size:12px;opacity:0.6">📋 Copy</span>
+            </div>
+            <div class="fee-display" id="feeDisplay">₹100</div>
+            <div style="font-size:13px;color:var(--muted)">Pay <strong style="color:var(--neon)">EXACT</strong> amount only</div>
+            <div style="margin-top:18px;text-align:left;font-size:13px;color:var(--muted);line-height:2">
+              <strong style="color:var(--text)">Instructions:</strong><br>
+              1. Scan QR or copy UPI ID<br>
+              2. Pay the exact entry fee shown above<br>
+              3. Note the <strong style="color:var(--neon)">UTR / Transaction ID</strong> from your UPI app<br>
+              4. Fill UTR below and upload screenshot
+            </div>
+          </div>
+
+          <!-- UTR + Screenshot + Submit -->
+          <div style="margin-top:24px">
+            <div class="form-group">
+              <label class="form-label">UTR / Transaction ID *</label>
+              <input type="text" class="form-control" id="utrInput" placeholder="Enter UTR from your UPI app (12 digits)" style="font-family:'Orbitron',sans-serif;letter-spacing:2px">
+              <div style="font-size:12px;color:var(--muted);margin-top:6px">⚠️ Each UTR can only be used ONCE globally. Find it in your UPI app after payment.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Payment Screenshot *</label>
+              <div class="file-upload" id="screenshotUpload">
+                <input type="file" id="screenshotFile" accept="image/*">
+                <div class="file-upload-icon">📷</div>
+                <div class="file-upload-text"><strong>Click to upload</strong> or drag & drop<br><span style="font-size:12px">JPG, PNG up to 5MB</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
+                <input type="checkbox" id="agreeCheck" style="margin-top:4px;accent-color:var(--neon);width:16px;height:16px;flex-shrink:0">
+                <span style="font-size:14px;color:var(--muted);line-height:1.6">I agree to KBX Esports <a href="rules.html" style="color:var(--neon)" target="_blank">Rules & Guidelines</a>. All info is accurate. Fake UTR = permanent ban.</span>
+              </label>
+            </div>
+
+            <div id="submitError" class="alert alert-error hidden"></div>
+            <div id="submitLoading" class="alert alert-info hidden">⏳ Submitting registration...</div>
+
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <button class="btn btn-secondary" onclick="goBackToTeam()">← Back</button>
+              <button class="btn btn-primary btn-lg" style="flex:1;justify-content:center" id="submitBtn" onclick="submitRegistration()">🚀 Submit Registration</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal" style="max-width:500px">
+    <div class="modal-body" style="text-align:center;padding:40px">
+      <div style="font-size:64px;margin-bottom:16px">🎉</div>
+      <h2 style="font-family:'Orbitron',sans-serif;font-size:22px;color:var(--green);margin-bottom:8px">Registered!</h2>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;line-height:1.7">Your team is registered. Keep your Unique Code safe!</p>
+      <div style="background:var(--dark2);border:2px solid var(--neon);border-radius:12px;padding:20px;margin-bottom:24px">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">Your Unique Code</div>
+        <div id="successCode" style="font-family:'Orbitron',sans-serif;font-size:34px;font-weight:900;color:var(--neon);letter-spacing:6px">—</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">Sent to your email ✉️</div>
+      </div>
+      <div class="alert alert-info" style="text-align:left;margin-bottom:24px">
+        <div style="font-size:13px;line-height:1.8">
+          ✅ Check email for confirmation<br>
+          💳 Payment verified within 24 hours<br>
+          🏟️ Room ID sent before match
+        </div>
+      </div>
+      <a href="index.html" class="btn btn-primary btn-full">Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;padding:0">
+      <a href="index.html" class="logo" style="font-size:18px">KBX<span>ESPORTS</span></a>
+      <p style="color:var(--muted);font-size:13px">© 2026 KBX Esports. All Rights Reserved.</p>
+      <p><a href="/cdn-cgi/l/email-protection#d6bdb4aeb3a5a6b9a4a2a5f8b9b0b0bfb5bfb7ba96b1bbb7bfbaf8b5b9bb" style="color:var(--neon);text-decoration:none;font-size:13px"><span class="__cf_email__" data-cfemail="c9a2abb1acbab9a6bbbdbae7a6afafa0aaa0a8a589aea4a8a0a5e7aaa6a4">[email&#160;protected]</span></a></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">💬</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ============================================
+   KBX ESPORTS - MAIN JAVASCRIPT
+   ============================================ */
+
+// ===== HAMBURGER MENU =====
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+}
+
+// Close on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+
+// ===== ACTIVE NAV LINK =====
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+// ===== COUNTDOWN TIMER =====
+function startCountdown(endDate, el) {
+  if (!el) return;
+  
+  function update() {
+    const now = new Date().getTime();
+    const end = new Date(endDate).getTime();
+    const diff = end - now;
+
+    if (diff <= 0) {
+      el.innerHTML = '<span style="color:var(--neon2);font-weight:700">REGISTRATION CLOSED</span>';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    el.innerHTML = `
+      <div class="countdown-item"><div class="countdown-num">${String(days).padStart(2,'0')}</div><div class="countdown-label">Days</div></div>
+      <div class="countdown-item"><div class="countdown-num">${String(hours).padStart(2,'0')}</div><div class="countdown-label">Hrs</div></div>
+      <div class="countdown-item"><div class="countdown-num">${String(mins).padStart(2,'0')}</div><div class="countdown-label">Min</div></div>
+      <div class="countdown-item"><div class="countdown-num">${String(secs).padStart(2,'0')}</div><div class="countdown-label">Sec</div></div>
+    `;
+  }
+  
+  update();
+  setInterval(update, 1000);
+}
+
+// Init all countdowns on page
+document.querySelectorAll('[data-countdown]').forEach(el => {
+  startCountdown(el.dataset.countdown, el);
+});
+
+// ===== TABS =====
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const group = btn.closest('.tab-group') || document;
+    group.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    group.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const target = btn.dataset.tab;
+    const targetEl = document.getElementById(target) || group.querySelector('[data-tabcontent="' + target + '"]');
+    if (targetEl) targetEl.classList.add('active');
+  });
+});
+
+// ===== FILTER BUTTONS =====
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const group = btn.closest('.filter-bar');
+    if (group) {
+      group.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    }
+    btn.classList.add('active');
+    
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('[data-category]').forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = '';
+        card.style.animation = 'fadeInUp 0.4s ease both';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ===== MODALS =====
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+document.querySelectorAll('[data-modal]').forEach(btn => {
+  btn.addEventListener('click', () => openModal(btn.dataset.modal));
+});
+
+document.querySelectorAll('.modal-close, [data-close-modal]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = btn.closest('.modal-overlay');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+// ===== TOAST =====
+function showToast(msg, type = 'success') {
+  const colors = {
+    success: { bg: 'rgba(0,255,136,0.1)', border: 'rgba(0,255,136,0.3)', color: 'var(--green)' },
+    error: { bg: 'rgba(255,0,110,0.1)', border: 'rgba(255,0,110,0.3)', color: 'var(--neon2)' },
+    info: { bg: 'rgba(0,245,255,0.1)', border: 'rgba(0,245,255,0.2)', color: 'var(--neon)' },
+  };
+  const c = colors[type] || colors.info;
+  const icons = { success: '✓', error: '✕', info: 'ℹ' };
+  
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.style.cssText = `background:${c.bg};border:1px solid ${c.border};color:${c.color}`;
+  toast.innerHTML = `<span style="font-size:18px;font-weight:900">${icons[type]}</span> ${msg}`;
+  document.body.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.style.animation = 'toastIn 0.3s ease reverse both';
+    setTimeout(() => toast.remove(), 300);
+  }, 3500);
+}
+
+// ===== COPY UPI =====
+document.querySelectorAll('.upi-id-display').forEach(el => {
+  el.addEventListener('click', () => {
+    const text = el.querySelector('.upi-text')?.textContent || el.textContent;
+    navigator.clipboard.writeText(text.trim()).then(() => {
+      showToast('UPI ID copied!', 'success');
+    });
+  });
+});
+
+// ===== FILE UPLOAD PREVIEW =====
+document.querySelectorAll('.file-upload').forEach(wrap => {
+  const input = wrap.querySelector('input[type=file]');
+  if (!input) return;
+  
+  input.addEventListener('change', () => {
+    const file = input.files[0];
+    if (!file) return;
+    
+    const textEl = wrap.querySelector('.file-upload-text');
+    if (textEl) {
+      textEl.innerHTML = `<strong style="color:var(--green)">✓ ${file.name}</strong><br><span>Click to change</span>`;
+    }
+    
+    const iconEl = wrap.querySelector('.file-upload-icon');
+    if (iconEl) iconEl.textContent = '📷';
+  });
+  
+  // Drag & Drop
+  wrap.addEventListener('dragover', (e) => { e.preventDefault(); wrap.classList.add('drag-over'); });
+  wrap.addEventListener('dragleave', () => wrap.classList.remove('drag-over'));
+  wrap.addEventListener('drop', (e) => {
+    e.preventDefault();
+    wrap.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      const dt = new DataTransfer();
+      dt.items.add(file);
+      input.files = dt.files;
+      input.dispatchEvent(new Event('change'));
+    }
+  });
+});
+
+</script>
+
+<script>
+// KBX ESPORTS REGISTER PAGE - FIXED v3
+// Fixes: Tournament load, OTP strict, Player slots, Payment redirect, Steps
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFJkjzXyoZa6SJXywSXIL1JCf_TP6zls91VzEQMV1HySRRwm--zSuZUjJ58SY4jPWW/exec';
+
+let otpVerified = false;
+let selectedTour = null;
+let settings = {};
+let allTournaments = [];
+let otpTimer = null;
+
+// INIT
+async function init() {
+  const sel = document.getElementById('tournamentSelect');
+  sel.innerHTML = '<option value="">Loading tournaments...</option>';
+  try {
+    const [tRes, sRes] = await Promise.all([
+      fetch(SCRIPT_URL + '?action=get_tournaments'),
+      fetch(SCRIPT_URL + '?action=get_settings')
+    ]);
+    const [tData, sData] = await Promise.all([tRes.json(), sRes.json()]);
+
+    if (sData.success && sData.settings) {
+      settings = sData.settings;
+      if (settings.upi_id) {
+        const el = document.getElementById('upiIdText');
+        if (el) el.textContent = settings.upi_id;
+      }
+    }
+
+    if (tData.success) {
+      allTournaments = tData.tournaments.filter(function(t) { return t.status === 'OPEN'; });
+      if (allTournaments.length === 0) {
+        sel.innerHTML = '<option value="">No open tournaments right now</option>';
+      } else {
+        sel.innerHTML = '<option value="">Select Tournament</option>' +
+          allTournaments.map(function(t) {
+            return '<option value="' + t.id + '">' + t.name + ' (' + t.mode + ') Rs.' + t.entryFee + '</option>';
+          }).join('');
+        if (allTournaments.length === 1) {
+          sel.value = allTournaments[0].id;
+          onTourSelect();
+        }
+      }
+    } else {
+      sel.innerHTML = '<option value="">Failed to load. Refresh page.</option>';
+    }
+
+    const tid = new URLSearchParams(location.search).get('tid');
+    if (tid) { sel.value = tid; onTourSelect(); }
+
+  } catch(e) {
+    console.error('Init error:', e);
+    document.getElementById('tournamentSelect').innerHTML = '<option value="">Network error. Refresh page.</option>';
+  }
+}
+
+// TOURNAMENT SELECT
+document.getElementById('tournamentSelect').addEventListener('change', onTourSelect);
+
+function onTourSelect() {
+  const tid = document.getElementById('tournamentSelect').value;
+  selectedTour = null;
+  for (var i = 0; i < allTournaments.length; i++) {
+    if (allTournaments[i].id === tid) { selectedTour = allTournaments[i]; break; }
+  }
+  var det = document.getElementById('tourDetails');
+  if (!selectedTour) { det.style.display = 'none'; document.getElementById('playerSlots').innerHTML = ''; return; }
+  document.getElementById('tourFee').textContent   = 'Rs.' + selectedTour.entryFee;
+  document.getElementById('tourPrize').textContent = selectedTour.prizePool || 'TBA';
+  document.getElementById('tourMode').textContent  = selectedTour.mode;
+  var left = selectedTour.slots - (selectedTour.registeredCount || 0);
+  document.getElementById('tourSlots').textContent = left + ' / ' + selectedTour.slots;
+  det.style.display = 'block';
+  var fd = document.getElementById('feeDisplay');
+  if (fd) fd.textContent = 'Rs.' + selectedTour.entryFee;
+  buildPlayerSlots(selectedTour.mode);
+}
+
+// PLAYER SLOTS
+function buildPlayerSlots(mode) {
+  var counts = { SQUAD:4, DUO:2, SOLO:1, SQUAD5:5, SQUAD6:6 };
+  var n = counts[mode] || 4;
+  var html = '<div style="margin:20px 0">';
+  html += '<div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Player BGMI Details (' + mode + ' - ' + n + ' players)</div>';
+  for (var i = 1; i <= n; i++) {
+    html += '<div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px">';
+    html += '<div style="font-family:Orbitron,sans-serif;font-size:11px;color:var(--neon);margin-bottom:10px;font-weight:700">PLAYER ' + i + (i===1?' - LEADER':'') + '</div>';
+    html += '<div class="form-row">';
+    html += '<div class="form-group"><label class="form-label">BGMI ID *</label><input type="text" class="form-control" id="p' + i + 'igi" placeholder="5123456789" inputmode="numeric"></div>';
+    html += '<div class="form-group"><label class="form-label">In-Game Name *</label><input type="text" class="form-control" id="p' + i + 'ign" placeholder="KBX_HUNTER"></div>';
+    html += '</div></div>';
+  }
+  html += '</div>';
+  document.getElementById('playerSlots').innerHTML = html;
+}
+
+// SEND OTP
+async function sendOTP() {
+  var email = (document.getElementById('otpEmail').value || '').trim();
+  var tid   = document.getElementById('tournamentSelect').value;
+  if (!tid)    { showToast('Select a tournament first!', 'error'); return; }
+  if (!email)  { showToast('Enter your email first!', 'error'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Invalid email address', 'error'); return; }
+
+  var btn = document.getElementById('sendOtpBtn');
+  btn.disabled = true; btn.textContent = 'Sending...';
+
+  try {
+    var res  = await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'send_otp', email: email, tournamentId: tid })
+    });
+    var data = await res.json();
+    if (data.success) {
+      document.getElementById('otpSection').classList.remove('hidden');
+      document.getElementById('otpInput').focus();
+      showToast('OTP sent! Check inbox + spam folder', 'success');
+      startOTPTimer(btn);
+    } else {
+      showToast((data.error || 'Failed to send OTP'), 'error');
+      btn.disabled = false; btn.textContent = 'Send OTP';
+    }
+  } catch(e) {
+    showToast('Network error. Try again.', 'error');
+    btn.disabled = false; btn.textContent = 'Send OTP';
+  }
+}
+
+function startOTPTimer(btn) {
+  clearInterval(otpTimer);
+  var secs = 60;
+  btn.textContent = 'Resend (' + secs + 's)';
+  otpTimer = setInterval(function() {
+    secs--;
+    btn.textContent = 'Resend (' + secs + 's)';
+    if (secs <= 0) { clearInterval(otpTimer); btn.disabled = false; btn.textContent = 'Resend OTP'; }
+  }, 1000);
+}
+
+// VERIFY OTP - STRICT
+async function verifyOTP() {
+  var email  = (document.getElementById('otpEmail').value || '').trim();
+  var otp    = (document.getElementById('otpInput').value || '').trim();
+  var tid    = document.getElementById('tournamentSelect').value;
+  var errEl  = document.getElementById('otpError');
+  errEl.classList.add('hidden');
+
+  if (!otp || otp.length < 6) {
+    errEl.textContent = 'Enter the 6-digit OTP from your email';
+    errEl.classList.remove('hidden'); return;
+  }
+
+  var btn = document.getElementById('verifyOtpBtn');
+  btn.disabled = true; btn.textContent = 'Verifying...';
+
+  try {
+    var res  = await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'verify_otp', email: email, otp: otp, tournamentId: tid })
+    });
+    var data = await res.json();
+    if (data.success) {
+      otpVerified = true;
+      clearInterval(otpTimer);
+      document.getElementById('otpSection').innerHTML =
+        '<div class="alert alert-success" style="margin-top:16px">Email verified! Fill team details below.</div>';
+      document.getElementById('regForm').classList.remove('hidden');
+      setStep(2);
+      window.scrollTo({ top: document.getElementById('regForm').offsetTop - 80, behavior: 'smooth' });
+    } else {
+      errEl.textContent = (data.error || 'Wrong OTP. Try again.');
+      errEl.classList.remove('hidden');
+      btn.disabled = false; btn.textContent = 'Verify';
+    }
+  } catch(e) {
+    errEl.textContent = 'Network error. Try again.';
+    errEl.classList.remove('hidden');
+    btn.disabled = false; btn.textContent = 'Verify';
+  }
+}
+
+// STEP PROGRESS
+function setStep(n) {
+  for (var i = 1; i <= 4; i++) {
+    var el = document.getElementById('step' + i);
+    if (!el) continue;
+    el.classList.remove('active', 'done');
+    if (i < n)  el.classList.add('done');
+    if (i === n) el.classList.add('active');
+  }
+}
+
+// TEAM DETAILS TO PAYMENT
+function goToPayment() {
+  if (!otpVerified) { showToast('Verify your email first!', 'error'); return; }
+
+  var errEl    = document.getElementById('teamDetailsError');
+  errEl.classList.add('hidden');
+  var teamName   = (document.getElementById('teamName').value   || '').trim();
+  var leaderName = (document.getElementById('leaderName').value || '').trim();
+  var whatsapp   = (document.getElementById('whatsapp').value   || '').trim();
+
+  if (!teamName)                         { errEl.textContent = 'Enter Team Name'; errEl.classList.remove('hidden'); return; }
+  if (!leaderName)                       { errEl.textContent = 'Enter Leader Name'; errEl.classList.remove('hidden'); return; }
+  if (!whatsapp || whatsapp.length < 10) { errEl.textContent = 'Enter valid 10-digit WhatsApp number'; errEl.classList.remove('hidden'); return; }
+
+  var p1igi = document.getElementById('p1igi');
+  var p1ign = document.getElementById('p1ign');
+  if (p1igi && !p1igi.value.trim()) { errEl.textContent = 'Enter Player 1 BGMI ID'; errEl.classList.remove('hidden'); return; }
+  if (p1ign && !p1ign.value.trim()) { errEl.textContent = 'Enter Player 1 In-Game Name'; errEl.classList.remove('hidden'); return; }
+
+  document.getElementById('regForm').classList.add('hidden');
+  document.getElementById('paymentSection').classList.remove('hidden');
+  setStep(3);
+  window.scrollTo({ top: document.getElementById('paymentSection').offsetTop - 80, behavior: 'smooth' });
+}
+
+// BACK TO TEAM
+function goBackToTeam() {
+  document.getElementById('paymentSection').classList.add('hidden');
+  document.getElementById('regForm').classList.remove('hidden');
+  setStep(2);
+  window.scrollTo({ top: document.getElementById('regForm').offsetTop - 80, behavior: 'smooth' });
+}
+
+// SUBMIT
+async function submitRegistration() {
+  if (!otpVerified)  { showToast('Verify email first!', 'error'); return; }
+  if (!selectedTour) { showToast('No tournament selected!', 'error'); return; }
+
+  var errEl  = document.getElementById('submitError');
+  errEl.classList.add('hidden');
+  var utr    = (document.getElementById('utrInput').value  || '').trim().toUpperCase();
+  var agreed = document.getElementById('agreeCheck').checked;
+
+  if (!utr || utr.length < 6) { errEl.textContent = 'Enter valid UTR / Transaction ID'; errEl.classList.remove('hidden'); return; }
+  if (!agreed)                 { errEl.textContent = 'Please agree to the Rules'; errEl.classList.remove('hidden'); return; }
+
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true; btn.textContent = 'Submitting...';
+  document.getElementById('submitLoading').classList.remove('hidden');
+
+  var players = {};
+  for (var i = 1; i <= 6; i++) {
+    var igiEl = document.getElementById('p' + i + 'igi');
+    var ignEl = document.getElementById('p' + i + 'ign');
+    players['p' + i + 'igi'] = igiEl ? igiEl.value.trim() : '';
+    players['p' + i + 'ign'] = ignEl ? ignEl.value.trim() : '';
+  }
+
+  var payload = Object.assign({
+    action:       'submit_reg',
+    tournamentId: selectedTour.id,
+    email:        (document.getElementById('otpEmail').value   || '').trim(),
+    teamName:     (document.getElementById('teamName').value   || '').trim(),
+    leaderName:   (document.getElementById('leaderName').value || '').trim(),
+    whatsapp:     (document.getElementById('whatsapp').value   || '').trim(),
+    utr:          utr,
+    screenshot:   'N/A'
+  }, players);
+
+  try {
+    var res  = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) });
+    var data = await res.json();
+    if (data.success) {
+      document.getElementById('successCode').textContent = data.uniqueCode || 'KBX-XXXX';
+      document.getElementById('successModal').classList.add('active');
+      setStep(4);
+    } else {
+      errEl.textContent = (data.error || 'Submission failed. Try again.');
+      errEl.classList.remove('hidden');
+      btn.disabled = false; btn.textContent = 'Submit Registration';
+      document.getElementById('submitLoading').classList.add('hidden');
+    }
+  } catch(e) {
+    errEl.textContent = 'Network error. Check connection and try again.';
+    errEl.classList.remove('hidden');
+    btn.disabled = false; btn.textContent = 'Submit Registration';
+    document.getElementById('submitLoading').classList.add('hidden');
+  }
+}
+
+// UPI COPY
+function copyUPI() {
+  var text = (document.getElementById('upiIdText').textContent || '').trim();
+  if (!text) return;
+  navigator.clipboard.writeText(text)
+    .then(function() { showToast('UPI ID copied!', 'success'); })
+    .catch(function() { showToast(text, 'info'); });
+}
+
+// SCREENSHOT PREVIEW
+document.getElementById('screenshotFile').addEventListener('change', function() {
+  var file = this.files[0];
+  if (!file) return;
+  var zone = document.getElementById('screenshotUpload');
+  zone.style.borderColor = 'var(--green)';
+  var txt = zone.querySelector('.file-upload-text');
+  if (txt) txt.innerHTML = '<strong style="color:var(--green)">' + file.name + '</strong><br><span style="font-size:12px;color:var(--muted)">' + (file.size/1024).toFixed(0) + ' KB</span>';
+});
+
+// TOAST
+function showToast(msg, type) {
+  var colors = {
+    success: 'background:rgba(0,255,136,.12);border:1px solid rgba(0,255,136,.3);color:#00ff88',
+    error:   'background:rgba(255,0,110,.12);border:1px solid rgba(255,0,110,.3);color:#ff006e',
+    info:    'background:rgba(0,245,255,.08);border:1px solid rgba(0,245,255,.2);color:#00f5ff'
+  };
+  var t = document.createElement('div');
+  t.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;padding:14px 20px;border-radius:10px;font-size:14px;font-weight:700;font-family:Rajdhani,sans-serif;box-shadow:0 8px 32px rgba(0,0,0,.4);max-width:320px;' + (colors[type] || colors.info);
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(function() { t.style.opacity='0'; t.style.transition='.3s'; setTimeout(function(){t.remove();},300); }, 3500);
+}
+
+// START
+init();
+
+</script>
+</body>
+</html>
